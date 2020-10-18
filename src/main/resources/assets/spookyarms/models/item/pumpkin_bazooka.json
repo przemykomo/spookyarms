@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [128, 128],
 	"textures": {
-		"0": "spooky arms/pumpkin bazooka",
-		"particle": "spooky arms/pumpkin bazooka"
+		"0": "spookyarms:item/pumpkin_bazooka",
+		"particle": "spookyarms:item/pumpkin_bazooka"
 	},
 	"elements": [
 		{

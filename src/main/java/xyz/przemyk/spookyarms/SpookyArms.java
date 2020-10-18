@@ -22,6 +22,7 @@ public class SpookyArms {
 
     private void clientSetup(FMLClientSetupEvent event) {
         RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.PUMPKIN_BULLET.get(), new PumpkinBulletRenderFactory());
+        RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.PUMPKIN_ROCKET.get(), new PumpkinBulletRenderFactory());
     }
 
     private static class PumpkinBulletRenderFactory implements IRenderFactory<PumpkinBulletEntity> {
