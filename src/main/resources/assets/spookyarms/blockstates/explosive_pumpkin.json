@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=east": {
+            "model": "spookyarms:block/explosive_pumpkin",
+            "y": 90
+        },
+        "facing=north": {
+            "model": "spookyarms:block/explosive_pumpkin"
+        },
+        "facing=south": {
+            "model": "spookyarms:block/explosive_pumpkin",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "spookyarms:block/explosive_pumpkin",
+            "y": 270
+        }
+    }
+}

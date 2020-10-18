@@ -1,9 +1,6 @@
 package xyz.przemyk.spookyarms;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
+import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -32,4 +29,5 @@ public class ItemsRegistry {
     public static final RegistryObject<PumpkinBazookaItem> PUMPKIN_BAZOOKA = ITEMS.register("pumpkin_bazooka", PumpkinBazookaItem::new);
 
     public static final RegistryObject<Item> PUMPKIN_BULLET = ITEMS.register("pumpkin_bullet", () -> new Item(new Item.Properties().group(MOD_ITEM_GROUP)));
+    public static final RegistryObject<BlockItem> EXPLOSIVE_PUMPKIN = ITEMS.register("explosive_pumpkin", () -> new BlockItem(BlockRegistry.EXPLOSIVE_PUMPKIN.get(), new Item.Properties().group(MOD_ITEM_GROUP)));
 }

@@ -15,6 +15,7 @@ public class SpookyArms {
     public static final String MODID = "spookyarms";
 
     public SpookyArms() {
+        BlockRegistry.init();
         ItemsRegistry.init();
         EntityRegistry.init();
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
@@ -23,12 +24,20 @@ public class SpookyArms {
     private void clientSetup(FMLClientSetupEvent event) {
         RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.PUMPKIN_BULLET.get(), new PumpkinBulletRenderFactory());
         RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.PUMPKIN_ROCKET.get(), new PumpkinBulletRenderFactory());
+        RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.EXPLOSIVE_PUMPKIN.get(),new ExplosivePumpkinRenderFactory());
     }
 
     private static class PumpkinBulletRenderFactory implements IRenderFactory<PumpkinBulletEntity> {
         @Override
         public EntityRenderer<? super PumpkinBulletEntity> createRenderFor(EntityRendererManager manager) {
             return new SpriteRenderer<>(manager, Minecraft.getInstance().getItemRenderer());
+        }
+    }
+
+    private static class ExplosivePumpkinRenderFactory implements IRenderFactory<ExplosivePumpkinEntity> {
+        @Override
+        public EntityRenderer<? super ExplosivePumpkinEntity> createRenderFor(EntityRendererManager manager) {
+            return new ExplosivePumpkinRenderer(manager);
         }
     }
 }
