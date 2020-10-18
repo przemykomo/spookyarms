@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [128, 128],
 	"textures": {
-		"0": "spooky arms/pumpkin pistol",
-		"particle": "spooky arms/pumpkin pistol"
+		"0": "spookyarms:item/pumpkin_pistol",
+		"particle": "spookyarms:item/pumpkin_pistol"
 	},
 	"elements": [
 		{

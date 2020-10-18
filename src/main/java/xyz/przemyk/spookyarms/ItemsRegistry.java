@@ -25,7 +25,11 @@ public class ItemsRegistry {
         }
     };
 
-    public static final RegistryObject<PumpkinPistolItem> PUMPKIN_PISTOL = ITEMS.register("pumpkin_pistol", PumpkinPistolItem::new);
+    public static final RegistryObject<PumpkinPistolItem> PUMPKIN_PISTOL = ITEMS.register("pumpkin_pistol", () -> new PumpkinPistolItem((byte) 3, 30));
+    public static final RegistryObject<PumpkinPistolItem> PUMPKIN_PISTOL_MK2 = ITEMS.register("pumpkin_pistol_mk2", () -> new PumpkinPistolItem((byte) 4, 25));
+    public static final RegistryObject<PumpkinPistolItem> PUMPKIN_PISTOL_MK3 = ITEMS.register("pumpkin_pistol_mk3", () -> new PumpkinPistolItem((byte) 5, 20));
+
     public static final RegistryObject<PumpkinBazookaItem> PUMPKIN_BAZOOKA = ITEMS.register("pumpkin_bazooka", PumpkinBazookaItem::new);
+
     public static final RegistryObject<Item> PUMPKIN_BULLET = ITEMS.register("pumpkin_bullet", () -> new Item(new Item.Properties().group(MOD_ITEM_GROUP)));
 }

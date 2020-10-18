@@ -7,7 +7,11 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileHelper;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.IndirectEntityDamageSource;
@@ -18,18 +22,32 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
 
 public class PumpkinBulletEntity extends ProjectileEntity implements IRendersAsItem {
+    public static final DataParameter<Byte> DAMAGE = EntityDataManager.createKey(PumpkinBulletEntity.class, DataSerializers.BYTE);
 
     public PumpkinBulletEntity(EntityType<? extends ProjectileEntity> type, World worldIn) {
         super(type, worldIn);
     }
 
-    public PumpkinBulletEntity(World world) {
+    public PumpkinBulletEntity(World world, byte damage) {
         super(EntityRegistry.PUMPKIN_BULLET.get(), world);
+        dataManager.set(DAMAGE, damage);
     }
 
     @Override
     protected void registerData() {
+        dataManager.register(DAMAGE, (byte) 0);
+    }
 
+    @Override
+    protected void writeAdditional(CompoundNBT compound) {
+        super.writeAdditional(compound);
+        compound.putByte("damage", dataManager.get(DAMAGE));
+    }
+
+    @Override
+    protected void readAdditional(CompoundNBT compound) {
+        super.readAdditional(compound);
+        dataManager.set(DAMAGE, compound.getByte("damage"));
     }
 
     @Override
@@ -73,7 +91,13 @@ public class PumpkinBulletEntity extends ProjectileEntity implements IRendersAsI
                 ((LivingEntity)shooter).setLastAttackedEntity(entity);
             }
         }
-        entity.attackEntityFrom(damagesource, 3.0f);
+        entity.attackEntityFrom(damagesource, dataManager.get(DAMAGE));
+    }
+
+    @Override
+    protected void onImpact(RayTraceResult result) {
+        super.onImpact(result);
+        remove();
     }
 
     @Override
