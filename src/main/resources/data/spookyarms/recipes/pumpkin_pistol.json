@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "##P",
+        "DiI",
+        "  i"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:carved_pumpkin"
+        },
+        "P": {
+            "item": "minecraft:pumpkin"
+        },
+        "D": {
+            "item": "spookyarms:pumpkin_circuit"
+        },
+        "i": {
+            "item": "minecraft:iron_ingot"
+        },
+        "I": {
+            "item": "minecraft:iron_block"
+        }
+    },
+    "result": {
+        "item": "spookyarms:pumpkin_pistol",
+        "count": 1
+    }
+}

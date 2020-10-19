@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "spookyarms:pumpkin_pistol"
+        },
+        {
+            "item": "spookyarms:upgrade_kit"
+        }
+    ],
+    "result": {
+        "item": "spookyarms:pumpkin_pistol_mk2",
+        "count": 1
+    }
+}

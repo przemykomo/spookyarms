@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#II",
+        "DiI"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:carved_pumpkin"
+        },
+        "I": {
+            "item": "minecraft:iron_block"
+        },
+        "D": {
+            "item": "spookyarms:pumpkin_circuit"
+        },
+        "i": {
+            "item": "minecraft:iron_ingot"
+        }
+    },
+    "result": {
+        "item": "spookyarms:pumpkin_bazooka",
+        "count": 1
+    }
+}
