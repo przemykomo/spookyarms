@@ -1,0 +1,14 @@
+{
+    "itemGroup.spookyarms": "Spooky Arms",
+    "item.spookyarms.pumpkin_pistol": "Pumpkin Pistol",
+    "item.spookyarms.pumpkin_pistol_mk2": "Pumpkin Pistol MK2",
+    "item.spookyarms.pumpkin_pistol_mk3": "Pumpkin Pistol MK3",
+    "item.spookyarms.pumpkin_bazooka": "Pumpkin Bazooka",
+    "item.spookyarms.pumpkin_bullet": "Pumpkin Bullet",
+    "block.spookyarms.explosive_pumpkin": "Explosive Pumpkin",
+    "item.spookyarms.infinite_ammo_pouch": "Infinite Ammo Pouch",
+    "item.spookyarms.pumpkin_circuit": "Pumpkin Circuit",
+    "item.spookyarms.upgrade_kit": "Upgrade Kit",
+
+    "death.attack.pistol": "%1$s was shot by %2$s"
+}
