@@ -36,7 +36,7 @@ public class PumpkinPistolItem extends ShootableItem {
 
             playerIn.getCooldownTracker().setCooldown(this, COOLDOWN);
 
-            if (!ammo.isEmpty()) {
+            if (!ammo.isEmpty() && ammo.getItem() != ItemsRegistry.INFINITE_AMMO_POUCH.get() && !playerIn.abilities.isCreativeMode) {
                 ammo.shrink(1);
             }
 
@@ -49,7 +49,7 @@ public class PumpkinPistolItem extends ShootableItem {
 
     @Override
     public Predicate<ItemStack> getInventoryAmmoPredicate() {
-        return itemStack -> itemStack.getItem() == ItemsRegistry.PUMPKIN_BULLET.get();
+        return itemStack -> itemStack.getItem() == ItemsRegistry.PUMPKIN_BULLET.get() || itemStack.getItem() == ItemsRegistry.INFINITE_AMMO_POUCH.get();
     }
 
     @Override

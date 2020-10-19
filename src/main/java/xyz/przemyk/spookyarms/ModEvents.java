@@ -14,12 +14,14 @@ public class ModEvents {
 
     @SubscribeEvent
     public static void lootTableLoad(LootTableLoadEvent event) {
-        event.getTable().addPool(
-                LootPool.builder().name(LootTables.CHESTS_SIMPLE_DUNGEON.toString())
-                        .rolls(new RandomValueRange(0, 1))
-                        .bonusRolls(0, 1)
-                        .addEntry(ItemLootEntry.builder(ItemsRegistry.UPGRADE_KIT.get()))
-                        .build()
-        );
+        if (event.getName().equals(LootTables.CHESTS_SIMPLE_DUNGEON)) {
+            event.getTable().addPool(
+                    LootPool.builder().name(LootTables.CHESTS_SIMPLE_DUNGEON.toString())
+                            .rolls(new RandomValueRange(0, 1))
+                            .bonusRolls(0, 1)
+                            .addEntry(ItemLootEntry.builder(ItemsRegistry.UPGRADE_KIT.get()))
+                            .build()
+            );
+        }
     }
 }

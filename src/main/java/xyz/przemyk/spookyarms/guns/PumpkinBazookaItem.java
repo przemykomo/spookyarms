@@ -28,12 +28,13 @@ public class PumpkinBazookaItem extends ShootableItem {
             PumpkinRocketEntity pumpkinRocketEntity = new PumpkinRocketEntity(worldIn, ammo.getItem() == ItemsRegistry.EXPLOSIVE_PUMPKIN.get());
             pumpkinRocketEntity.setPosition(playerIn.getPosX(), playerIn.getPosY() + 1, playerIn.getPosZ());
             pumpkinRocketEntity.func_234612_a_(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 3.0F, 1.0F);
+            pumpkinRocketEntity.setMotion(pumpkinRocketEntity.getMotion().add(playerIn.getMotion()));
 
             worldIn.addEntity(pumpkinRocketEntity);
 
             playerIn.getCooldownTracker().setCooldown(this, 45);
 
-            if (!ammo.isEmpty()) {
+            if (!ammo.isEmpty() && !playerIn.abilities.isCreativeMode) {
                 ammo.shrink(1);
             }
 

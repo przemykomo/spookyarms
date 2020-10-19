@@ -18,7 +18,7 @@ public class ExplosivePumpkinBlock extends TNTBlock {
 
     public ExplosivePumpkinBlock() {
         super(Properties.create(Material.TNT).zeroHardnessAndResistance().sound(SoundType.PLANT));
-        this.setDefaultState(this.stateContainer.getBaseState().with(HorizontalBlock.HORIZONTAL_FACING, Direction.NORTH));
+        this.setDefaultState(this.stateContainer.getBaseState().with(HorizontalBlock.HORIZONTAL_FACING, Direction.NORTH).with(UNSTABLE, false));
     }
 
     @Override

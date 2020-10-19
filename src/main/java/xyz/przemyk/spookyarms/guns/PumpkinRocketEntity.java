@@ -30,6 +30,14 @@ public class PumpkinRocketEntity extends PumpkinBulletEntity {
     }
 
     @Override
+    public void tick() {
+        super.tick();
+        if (!hasNoGravity()) {
+            setMotion(getMotion().add(0.0D, -0.04D, 0.0D));
+        }
+    }
+
+    @Override
     protected void registerData() {
         super.registerData();
         dataManager.register(EXPLOSIVE, false);
