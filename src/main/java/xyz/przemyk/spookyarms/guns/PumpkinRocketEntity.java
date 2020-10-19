@@ -1,4 +1,4 @@
-package xyz.przemyk.spookyarms;
+package xyz.przemyk.spookyarms.guns;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
@@ -14,9 +14,8 @@ import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
+import xyz.przemyk.spookyarms.registry.EntityRegistry;
 
-//TODO: better name?
-//TODO: explosive variant
 public class PumpkinRocketEntity extends PumpkinBulletEntity {
     public static final DataParameter<Boolean> EXPLOSIVE = EntityDataManager.createKey(PumpkinRocketEntity.class, DataSerializers.BOOLEAN);
 

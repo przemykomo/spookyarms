@@ -1,4 +1,4 @@
-package xyz.przemyk.spookyarms;
+package xyz.przemyk.spookyarms.explosive;
 
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -24,7 +24,7 @@ public class ExplosivePumpkinBlock extends TNTBlock {
     @Override
     public void catchFire(BlockState state, World worldIn, BlockPos pos, @Nullable Direction face, @Nullable LivingEntity igniter) {
         if (!worldIn.isRemote) {
-            ExplosivePumpkinEntity explosivePumpkinEntity = new ExplosivePumpkinEntity(worldIn, pos.getX() + 0.5D, pos.getY(), pos.getZ() + 0.5D, worldIn.getBlockState(pos));
+            ExplosivePumpkinEntity explosivePumpkinEntity = new ExplosivePumpkinEntity(worldIn, pos.getX() + 0.5D, pos.getY(), pos.getZ() + 0.5D);
             worldIn.addEntity(explosivePumpkinEntity);
             worldIn.playSound(null, explosivePumpkinEntity.getPosX(), explosivePumpkinEntity.getPosY(), explosivePumpkinEntity.getPosZ(), SoundEvents.ENTITY_TNT_PRIMED, SoundCategory.BLOCKS, 1.0F, 1.0F);
         }
@@ -33,7 +33,7 @@ public class ExplosivePumpkinBlock extends TNTBlock {
     @Override
     public void onExplosionDestroy(World worldIn, BlockPos pos, Explosion explosionIn) {
         if (!worldIn.isRemote) {
-            ExplosivePumpkinEntity explosivePumpkinEntity = new ExplosivePumpkinEntity(worldIn, (double)pos.getX() + 0.5D, pos.getY(), (double)pos.getZ() + 0.5D, BlockRegistry.EXPLOSIVE_PUMPKIN.get().getDefaultState());
+            ExplosivePumpkinEntity explosivePumpkinEntity = new ExplosivePumpkinEntity(worldIn, (double)pos.getX() + 0.5D, pos.getY(), (double)pos.getZ() + 0.5D);
             explosivePumpkinEntity.setFuse((short)(worldIn.rand.nextInt(explosivePumpkinEntity.getFuse() / 4) + explosivePumpkinEntity.getFuse() / 8));
             worldIn.addEntity(explosivePumpkinEntity);
         }

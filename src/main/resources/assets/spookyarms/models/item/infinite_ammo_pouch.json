@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "spookyarms:item/infinite_ammo_pouch"
+    }
+}

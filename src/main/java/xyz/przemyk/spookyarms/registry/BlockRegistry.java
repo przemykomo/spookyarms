@@ -1,10 +1,12 @@
-package xyz.przemyk.spookyarms;
+package xyz.przemyk.spookyarms.registry;
 
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import xyz.przemyk.spookyarms.explosive.ExplosivePumpkinBlock;
+import xyz.przemyk.spookyarms.SpookyArms;
 
 public class BlockRegistry {
 

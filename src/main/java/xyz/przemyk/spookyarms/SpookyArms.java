@@ -9,6 +9,12 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import xyz.przemyk.spookyarms.explosive.ExplosivePumpkinEntity;
+import xyz.przemyk.spookyarms.explosive.ExplosivePumpkinRenderer;
+import xyz.przemyk.spookyarms.guns.PumpkinBulletEntity;
+import xyz.przemyk.spookyarms.registry.BlockRegistry;
+import xyz.przemyk.spookyarms.registry.EntityRegistry;
+import xyz.przemyk.spookyarms.registry.ItemsRegistry;
 
 @Mod(SpookyArms.MODID)
 public class SpookyArms {

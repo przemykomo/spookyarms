@@ -1,4 +1,4 @@
-package xyz.przemyk.spookyarms;
+package xyz.przemyk.spookyarms.registry;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -6,6 +6,10 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import xyz.przemyk.spookyarms.explosive.ExplosivePumpkinEntity;
+import xyz.przemyk.spookyarms.guns.PumpkinBulletEntity;
+import xyz.przemyk.spookyarms.guns.PumpkinRocketEntity;
+import xyz.przemyk.spookyarms.SpookyArms;
 
 public class EntityRegistry {
 

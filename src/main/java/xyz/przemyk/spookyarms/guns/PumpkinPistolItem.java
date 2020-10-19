@@ -1,11 +1,14 @@
-package xyz.przemyk.spookyarms;
+package xyz.przemyk.spookyarms.guns;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ShootableItem;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
+import xyz.przemyk.spookyarms.registry.ItemsRegistry;
 
 import java.util.function.Predicate;
 
@@ -36,7 +39,9 @@ public class PumpkinPistolItem extends ShootableItem {
             if (!ammo.isEmpty()) {
                 ammo.shrink(1);
             }
-            return ActionResult.resultSuccess(heldItem);
+
+            playerIn.rotationPitch -= 5;
+            worldIn.playSound(null, playerIn.getPosX(), playerIn.getPosY(), playerIn.getPosZ(), SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.PLAYERS, 1.0F, 2.0F);
         }
 
         return ActionResult.resultPass(heldItem);

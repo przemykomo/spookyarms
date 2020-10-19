@@ -1,4 +1,4 @@
-package xyz.przemyk.spookyarms;
+package xyz.przemyk.spookyarms.explosive;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.texture.AtlasTexture;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3f;
+import xyz.przemyk.spookyarms.registry.BlockRegistry;
 
 public class ExplosivePumpkinRenderer extends EntityRenderer<ExplosivePumpkinEntity> {
 
@@ -33,11 +34,12 @@ public class ExplosivePumpkinRenderer extends EntityRenderer<ExplosivePumpkinEnt
         matrixStackIn.rotate(Vector3f.YP.rotationDegrees(-90.0F));
         matrixStackIn.translate(-0.5D, -0.5D, 0.5D);
         matrixStackIn.rotate(Vector3f.YP.rotationDegrees(90.0F));
-        TNTMinecartRenderer.renderTntFlash(entityIn.BLOCK_STATE, matrixStackIn, bufferIn, packedLightIn, entityIn.getFuse() / 5 % 2 == 0);
+        TNTMinecartRenderer.renderTntFlash(BlockRegistry.EXPLOSIVE_PUMPKIN.get().getDefaultState(), matrixStackIn, bufferIn, packedLightIn, entityIn.getFuse() / 5 % 2 == 0);
         matrixStackIn.pop();
         super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public ResourceLocation getEntityTexture(ExplosivePumpkinEntity entity) {
         return AtlasTexture.LOCATION_BLOCKS_TEXTURE;

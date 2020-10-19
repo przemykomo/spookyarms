@@ -1,4 +1,4 @@
-package xyz.przemyk.spookyarms;
+package xyz.przemyk.spookyarms.guns;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -20,6 +20,8 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
+import xyz.przemyk.spookyarms.registry.EntityRegistry;
+import xyz.przemyk.spookyarms.registry.ItemsRegistry;
 
 public class PumpkinBulletEntity extends ProjectileEntity implements IRendersAsItem {
     public static final DataParameter<Byte> DAMAGE = EntityDataManager.createKey(PumpkinBulletEntity.class, DataSerializers.BYTE);
@@ -50,6 +52,7 @@ public class PumpkinBulletEntity extends ProjectileEntity implements IRendersAsI
         dataManager.set(DAMAGE, compound.getByte("damage"));
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void tick() {
         Entity entity = this.func_234616_v_();
