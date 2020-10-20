@@ -7,8 +7,9 @@
     "item.spookyarms.pumpkin_bullet": "Pumpkin Bullet",
     "block.spookyarms.explosive_pumpkin": "Explosive Pumpkin",
     "item.spookyarms.infinite_ammo_pouch": "Infinite Ammo Pouch",
-    "item.spookyarms.pumpkin_circuit": "Pumpkin Circuit",
     "item.spookyarms.upgrade_kit": "Upgrade Kit",
+    "item.spookyarms.pumpkin_circuit": "Pumpkin Circuit",
+    "spookyarms.pumpkin_circuit.info": "Can be found in dungeons.",
 
     "death.attack.pistol": "%1$s was shot by %2$s"
 }
