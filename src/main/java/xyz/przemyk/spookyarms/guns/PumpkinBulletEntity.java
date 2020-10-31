@@ -19,10 +19,16 @@ import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.network.NetworkHooks;
 import xyz.przemyk.spookyarms.registry.EntityRegistry;
 import xyz.przemyk.spookyarms.registry.ItemsRegistry;
 
+@OnlyIn(
+        value = Dist.CLIENT,
+        _interface = IRendersAsItem.class
+)
 public class PumpkinBulletEntity extends ProjectileEntity implements IRendersAsItem {
     public static final DataParameter<Byte> DAMAGE = EntityDataManager.createKey(PumpkinBulletEntity.class, DataSerializers.BYTE);
 
@@ -109,6 +115,7 @@ public class PumpkinBulletEntity extends ProjectileEntity implements IRendersAsI
     }
 
     @Override
+    @OnlyIn(Dist.CLIENT)
     public ItemStack getItem() {
         return new ItemStack(ItemsRegistry.PUMPKIN_BULLET.get());
     }
