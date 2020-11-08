@@ -64,10 +64,12 @@ public class PumpkinRocketEntity extends PumpkinBulletEntity {
     protected void onImpact(RayTraceResult result) {
         super.onImpact(result);
         world.addParticle(new BlockParticleData(ParticleTypes.BLOCK, Blocks.PUMPKIN.getDefaultState()), getPosX(), getPosY(), getPosZ(), 0.0, 0.0, 0.0);
-        if (dataManager.get(EXPLOSIVE)) {
-            this.world.createExplosion(this, this.getPosX(), this.getPosYHeight(0.0625D), this.getPosZ(), 3.0F, Explosion.Mode.BREAK);
-        } else {
-            this.world.createExplosion(this, this.getPosX(), this.getPosYHeight(0.0625D), this.getPosZ(), 1.0F, Explosion.Mode.BREAK);
+        if (!world.isRemote()) {
+            if (dataManager.get(EXPLOSIVE)) {
+                this.world.createExplosion(this, this.getPosX(), this.getPosYHeight(0.0625D), this.getPosZ(), 3.0F, Explosion.Mode.BREAK);
+            } else {
+                this.world.createExplosion(this, this.getPosX(), this.getPosYHeight(0.0625D), this.getPosZ(), 1.0F, Explosion.Mode.BREAK);
+            }
         }
     }
 }
